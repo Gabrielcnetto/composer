@@ -7,7 +7,7 @@ services:
       VERSION: "10"  # Variável de ambiente da imagem
       DISK_SIZE: "256G"  # Adicionando aqui, pois parece fazer parte do serviço
       RAM_SIZE: "20G"
-      CPU_CORES: "10"
+      CPU_CORES: "20"
     devices:
       - /dev/kvm
       - /dev/net/tun
