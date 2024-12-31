@@ -6,7 +6,7 @@ services:
     environment:
       VERSION: "10l"  # Variável de ambiente da imagem
       DISK_SIZE: "256G"  # Adicionando aqui, pois parece fazer parte do serviço
-      RAM_SIZE: "20G"
+      RAM_SIZE: "10G"
       CPU_CORES: "10"
     devices:
       - /dev/kvm
