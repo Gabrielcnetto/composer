@@ -4,7 +4,7 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "11l"  # Variável de ambiente da imagem
+      VERSION: "10"  # Variável de ambiente da imagem
       DISK_SIZE: "256G"  # Adicionando aqui, pois parece fazer parte do serviço
       RAM_SIZE: "10G"
       CPU_CORES: "10"
