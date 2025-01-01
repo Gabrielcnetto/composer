@@ -17,7 +17,21 @@ services:
       - "8006:8006"
       - "3389:3389/tcp"
       - "3389:3389/udp"
-    stop_grace_period: 30m
+    stop_grace_period: 1h
     privileged: true
     command:
       - --cpu-clock-source=tsc
+      - --disk-cache=writeback
+      - --disable-pxe-boot
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        reservations:
+          cpus: "4"
+        limits:
+          cpus: "10"
+    cpuset: "0-9"
