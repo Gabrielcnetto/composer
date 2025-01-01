@@ -4,23 +4,14 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "10"  # Ajustado conforme a versão desejada
-      DISK_SIZE: "256G"  # Especificação do disco
-      RAM_SIZE: "10G"    # Memória RAM alocada
-      CPU_CORES: "10"    # Quantidade de núcleos de CPU
+      VERSION: "10l"
     devices:
-      - /dev/kvm         # Dispositivo KVM para aceleração
-      - /dev/net/tun     # Dispositivo de tunelamento
+      - /dev/kvm
+      - /dev/net/tun
     cap_add:
-      - NET_ADMIN        # Permissões adicionais de rede
+      - NET_ADMIN
     ports:
-      - "8006:8006"      # Porta para acesso ao serviço
-      - "3389:3389/tcp"  # Porta RDP TCP
-      - "3389:3389/udp"  # Porta RDP UDP
-    stop_grace_period: 30m # Tempo de espera para parada
-    privileged: true      # Necessário para acessar dispositivos de sistema
-    command: >
-      --cpu-clock-source=tsc
-      --disk-cache=writeback
-      --disable-pxe-boot
-      --some-other-command # Substitua por outros comandos, se necessário
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 30m
