@@ -19,7 +19,8 @@ services:
       - "3389:3389/udp"
     stop_grace_period: 1h
     privileged: true
-    command:
-      - --cpu-clock-source=tsc
-      - --disk-cache=writeback
-      - --disable-pxe-boot
+    command: >
+       --cpu-clock-source=tsc
+       --disk-cache=writeback
+       --disable-pxe-boot
+
