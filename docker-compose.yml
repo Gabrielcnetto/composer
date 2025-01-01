@@ -5,6 +5,9 @@ services:
     container_name: windows
     environment:
       VERSION: "10l"
+      RAM_SIZE: "10G"  # Memória RAM alocada
+      CPU_CORES: "10"  # Quantidade de núcleos de CPU
+      DISK_SIZE: "200G"  # Tamanho do disco alocado
     devices:
       - /dev/kvm
       - /dev/net/tun
