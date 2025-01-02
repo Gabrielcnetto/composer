@@ -8,10 +8,18 @@ services:
       DISK_SIZE: "200G"
       RAM_SIZE: "8G"
       CPU_CORES: "4"
+      GPU: "Y"  # Habilitar suporte a GPU no contêiner
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     devices:
       - /dev/kvm
       - /dev/net/tun
-      - /dev/dri:/dev/dri 
+    runtime: nvidia  # Define o runtime para usar as GPUs NVIDIA
     cap_add:
       - NET_ADMIN
     ports:
@@ -19,4 +27,3 @@ services:
       - 3389:3389/tcp
       - 3389:3389/udp
     stop_grace_period: 10m
-
